@@ -1,5 +1,14 @@
 def find_station(stations, name):
-    pass
+    for i in range(len(stations)):
+        if stations[i] == name:
+            return i
+    return None
 
 def count_stops(stations, start, stop):
-    pass
+    
+    start_station = find_station(stations, start)
+    stop_station = find_station(stations, stop)
+
+    if start_station is None or stop_station is None:
+        return -1
+    return abs(stop_station - start_station)
