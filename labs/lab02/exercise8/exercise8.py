@@ -27,7 +27,8 @@ def simulate_bouncing_ball(start_height):
 
         bounce_count += 1
         total_distance += 2 * height 
-
+    else:
+        is_ball_stopped(height)
     return bounce_count, total_distance
 
 # Test your code here
