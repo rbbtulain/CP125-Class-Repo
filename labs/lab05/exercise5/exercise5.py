@@ -3,7 +3,9 @@ def clean_sessions(pool, sessions, dead_servers):
     """
     Verify dead servers in pool, remove their sessions, and return sorted list.
     """
-    pass
+    alive_servers = set(pool) - set(dead_servers)
+    cleaned_sessions = [s for s in sessions if s[0] in alive_servers]
+    return sorted(cleaned_sessions)
 
 
 # Test
