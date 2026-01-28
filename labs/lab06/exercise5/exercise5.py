@@ -1,17 +1,17 @@
-def audit_zero_trust(baseline_set, current_log_list):
-
-   authorized_set = set()
+def manage_roster(enrolled, drop_requests, waitlist):
 
 
-   current_set = set(current_log_list)
+    for name in drop_requests:
+        if name in enrolled:
+            enrolled.remove(name)
 
+    if len(enrolled) < 5:
 
-   for user_id in current_set:
-      if user_id in baseline_set:
-         authorized_set.add(user_id)
+        while len(enrolled) < 7:
+            if len(waitlist) > 0:
+                student = waitlist.pop()
+                enrolled.add(student)
+            else:
+                break
 
-   alerts = current_set - baseline_set
-
-   inactive = baseline_set - current_set
-
-   return authorized_set, alerts, inactive
+    return len(enrolled)
