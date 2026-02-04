@@ -23,4 +23,13 @@ def find_qualified_students(student_records, required_courses):
         if common == completed:
             qualified.append(student_id)
     
-    return qualified
+    return sorted(qualified)
+
+
+
+("S1", {"Math", "Physics", "CS"}) 
+("S2", {"Math", "Physics"})
+("S3", {"Math", "Physics", "CS", "English"})
+
+
+print(find_qualified_students(student_records, required_courses))
