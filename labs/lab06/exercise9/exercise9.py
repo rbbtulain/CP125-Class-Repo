@@ -26,10 +26,13 @@ def find_qualified_students(student_records, required_courses):
     return sorted(qualified)
 
 
+# Example usage
+student_records = [
+    ("S1", {"Math", "Physics", "CS"}),
+    ("S2", {"Math", "Physics"}),
+    ("S3", {"Math", "Physics", "CS", "English"})
+]
 
-("S1", {"Math", "Physics", "CS"}) 
-("S2", {"Math", "Physics"})
-("S3", {"Math", "Physics", "CS", "English"})
-
+required_courses = {"Math", "CS"}
 
 print(find_qualified_students(student_records, required_courses))
