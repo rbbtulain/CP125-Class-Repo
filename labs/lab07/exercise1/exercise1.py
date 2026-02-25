@@ -1,6 +1,18 @@
 def process_actions(catalog, actions):
     # TODO: Your code here
-    pass
+    for row in actions:
+        isbn = row[1]
+        if isbn not in catalog:
+            continue
+        else:
+            if row[0] == "BORROW" and catalog[isbn] > 0:
+                catalog[isbn] -= 1
+            elif row[0] == "RETURN":
+                catalog[isbn] += 1
+
+    return catalog
+
+
 
 
 
