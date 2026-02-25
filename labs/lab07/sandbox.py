@@ -20,6 +20,11 @@ student["grade"] = "A+"
 # 5. Delete a field
 del student["age"]
 
+# 6. Add a new field 
+student["college"] = "Kolej Matrikulasi Labuan"
+
 # 6. Loop with .items()
 for key, value in student.items():
     print(f"{key}: {value}")
+
+
