@@ -2,7 +2,7 @@
 
 # Method 1: Read entire file
 print("=== Method 1: read() ===")
-f = open("data/demofile.txt", "r")
+f = open("lab/lab08/data/demofile.txt", "r")
 content = f.read()
 print(content)
 print(f"Type: {type(content)}")
