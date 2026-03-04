@@ -1,6 +1,9 @@
 def compare_prices(store_a, store_b):
-    # TODO: Your code here
-    pass
+
+    if store_a[]
+    return "only_a"
+    return "a_cheaper"
+    return "b_cheaper"
 
 
 
