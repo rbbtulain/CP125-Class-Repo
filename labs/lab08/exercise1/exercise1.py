@@ -4,7 +4,13 @@ def filter_passing_scores(input_file, output_file):
     lines = f.readlines()
     f.close()
 
+<<<<<<< HEAD
     count = 0
+=======
+    Args:
+        input_file: path to input file (student_id and score on alternating lines)
+        output_file: path to output file
+>>>>>>> 048e96cb9e64c6144eb3cb4797597ba992221557
 
     # Open output file
     f = open(output_file, "w")
