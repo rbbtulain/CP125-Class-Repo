@@ -1,21 +1,23 @@
-# Lab 08 Exercise 1: Simple Score Filter
-# Write your code below:
-
 def filter_passing_scores(input_file, output_file):
-    """
-    Filter students with passing scores (>= 80) and write to output file.
+    # Read the file
+    f = open(input_file, "r")
+    lines = f.readlines()
+    f.close()
 
-    Args:
-        input_file: path to input file (student_id score per line)
-        output_file: path to output file
+    count = 0
 
-    Returns:
-        int: count of passing students
-    """
-    # TODO: Implement this function
-    pass
+    # Open output file
+    f = open(output_file, "w")
 
+    # Process lines two at a time
+    for i in range(0, len(lines), 2):
+        student_id = lines[i].strip()
+        score = int(lines[i + 1].strip())
 
-# Test your code here
-result = filter_passing_scores("data/scores.txt", "data/passing.txt")
-print(f"Passing students: {result}")
+        if score >= 80:
+            f.write(f"{student_id} {score}\n")
+            count += 1
+
+    f.close()
+
+    return count
