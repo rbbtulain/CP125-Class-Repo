@@ -1,12 +1,29 @@
-    if len(traceroute) < 2:
-        return -1
-    largest_jump = 0
-    bottleneck_index = -1
-    for i in range(1, len(traceroute)):
-        previous_latency = traceroute[i - 1][1]
-        current_latency = traceroute[i][1]
-        jump = current_latency - previous_latency
-        if jump > largest_jump:
-            largest_jump = jump
-            bottleneck_index = i - 1
-    return bottleneck_index
+def merge_lists(file1, file2, output_file):
+    # Read first file
+    list1 = open(file1, "r")
+    lines1 = list1.readlines()
+    list1.close()
+
+    # Read second file
+    list2 = open(file2, "r")
+    lines2 = list2.readlines()
+    list2.close()
+
+    result = []
+
+    # Combine both lists
+    for line in lines1 + lines2:
+        name = line.strip()   # remove \n
+        if name not in result:
+            result.append(name)
+
+    # Sort alphabetically
+    result.sort()
+
+    # Write to output file
+    merge = open(output_file, "w")
+    for name in result:
+        merge.write(name + "\n")
+    merge.close()
+
+    return len(result)
