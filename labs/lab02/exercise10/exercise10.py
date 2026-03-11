@@ -1,22 +1,24 @@
+def calculate_battery_usage(distance, sport_mode):
+    battery_per_10m = 1.5
 
-def calculate_base_usage(distance):
-    """
-    Calculates the base battery usage.
-    1.5% battery per 10 meters.
-    """
-    # TODO: Implement this function
-    pass
+    if sport_mode:
+        battery_per_10m = battery_per_10m * 1.5
 
-def apply_mode_bonus(usage, is_sport_mode):
-    """
-    Increases battery consumption by 50% if in Sport Mode.
-    """
-    # TODO: Implement this function
-    pass
+    battery_used = (distance / 10) * battery_per_10m
+    return battery_used
 
-def has_enough_battery(distance, current_battery, is_sport_mode):
-    """
-    Calculates if there is enough battery for a round trip (distance * 2).
-    """
-    # TODO: Implement this function
-    pass
+
+def can_complete_trip(distance, battery_level, sport_mode):
+    round_trip_distance = distance * 2
+
+    required_battery = calculate_battery_usage(round_trip_distance, sport_mode)
+
+    if battery_level >= required_battery:
+        return True
+    else:
+        return False
+
+
+# Example
+result = can_complete_trip(200, 80, True)
+print(result)
