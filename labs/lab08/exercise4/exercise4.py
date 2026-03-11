@@ -27,13 +27,13 @@ def calculate_final_grades(input_file, output_file):
         midterm = float(row[1])
         final = float(row[2])
 
-        result = (midterm * 0.4) + (final * 0.6)
+        final_grade = (midterm * 0.4) + (final * 0.6)
 
-        total += result
+        total += final_grade
         count += 1
 
 
-        result.append([student_id, result])
+        result.append([student_id, final_grade])
 
     score.close()
 
@@ -45,8 +45,6 @@ def calculate_final_grades(input_file, output_file):
 
     grade.close()
     
-
-
     average = total / count
     return average
 
