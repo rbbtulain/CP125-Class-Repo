@@ -1,6 +1,6 @@
 # Lab 08 Exercise 5: Sales Summary
 # Write your code below:
-
+import csv
 def summarize_sales(input_file, output_file):
     """
     Calculate sales statistics: total, average, highest, and lowest revenue.
@@ -13,15 +13,12 @@ def summarize_sales(input_file, output_file):
         tuple: (total, average, highest, lowest)
     """
     # TODO: Implement this function
-    import csv
-
-def summarize_sales(input_file, output_file):
 
     revenues = []
 
     f = open(input_file, "r", newline="")
     reader = csv.reader(f)
-    next(reader)  # skip header
+    next(reader)  
 
     for row in reader:
         quantity = int(row[1])
@@ -37,7 +34,6 @@ def summarize_sales(input_file, output_file):
     highest = max(revenues)
     lowest = min(revenues)
 
-    # Write summary
     f = open(output_file, "w")
 
     f.write(f"Total Revenue: ${total:.2f}\n")
@@ -51,5 +47,5 @@ def summarize_sales(input_file, output_file):
 
 
 # Test your code here
-result = summarize_sales("data/sales.csv", "data/summary.txt")
+result = summarize_sales("labs/lab08/exercise5/data/sales.csv", "labs/lab08/exercise5/data/summary.txt")
 print(f"Total: ${result[0]:.2f}, Avg: ${result[1]:.2f}, High: ${result[2]:.2f}, Low: ${result[3]:.2f}")

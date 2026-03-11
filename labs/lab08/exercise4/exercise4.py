@@ -1,6 +1,6 @@
 # Lab 08 Exercise 4: Student Grade Calculator
 # Write your code below:
-import cvs
+import csv
 def calculate_final_grades(input_file, output_file):
     """
     Calculate final grades from midterm and final scores.
@@ -20,7 +20,7 @@ def calculate_final_grades(input_file, output_file):
     reader = csv.reader(score)
     next(reader)  
 
-    results = []
+    result = []
 
     for row in reader:
         student_id = row[0]
@@ -29,11 +29,11 @@ def calculate_final_grades(input_file, output_file):
 
         result = (midterm * 0.4) + (final * 0.6)
 
-        total += final_grade
+        total += result
         count += 1
 
 
-        results.append([student_id, final_grade])
+        result.append([student_id, result])
 
     score.close()
 
