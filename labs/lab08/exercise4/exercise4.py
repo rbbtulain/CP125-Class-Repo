@@ -52,5 +52,5 @@ def calculate_final_grades(input_file, output_file):
 
 
 # Test your code here
-result = calculate_final_grades("labs/lab08/data/scores.csv", "labs/lab08/data/grades.csv")
+result = calculate_final_grades("labs/lab08/exercise4/data/scores.csv", "labs/lab08/exercise4/data/grades.csv")
 print(f"Average final grade: {result:.2f}")
